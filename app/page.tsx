@@ -1,14 +1,15 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { Suspense } from 'react'
-import Table from '@/components/table'
-import TablePlaceholder from '@/components/table-placeholder'
-import ExpandingArrow from '@/components/expanding-arrow'
+import Image from "next/image";
+import Link from "next/link";
+import { Suspense } from "react";
+import Table from "@/components/table";
+import TablePlaceholder from "@/components/table-placeholder";
+import ExpandingArrow from "@/components/expanding-arrow";
+import AddUser from "@/components/add-user";
 
 // Prisma does not support Edge without the Data Proxy currently
 // export const runtime = 'edge'
-export const preferredRegion = 'home'
-export const dynamic = 'force-dynamic'
+export const preferredRegion = "home";
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <h1 className="pt-4 pb-8 bg-gradient-to-br from-black via-[#171717] to-[#575757] bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
         Postgres on Vercel
       </h1>
+      <AddUser />
       <Suspense fallback={<TablePlaceholder />}>
         <Table />
       </Suspense>
@@ -32,15 +34,15 @@ export default function Home() {
           className="font-medium underline underline-offset-4 hover:text-black transition-colors"
         >
           Vercel Postgres
-        </Link>{' '}
-        demo with{' '}
+        </Link>{" "}
+        demo with{" "}
         <Link
           href="https://prisma.io"
           className="font-medium underline underline-offset-4 hover:text-black transition-colors"
         >
           Prisma
-        </Link>{' '}
-        as the ORM. <br /> Built with{' '}
+        </Link>{" "}
+        as the ORM. <br /> Built with{" "}
         <Link
           href="https://nextjs.org/docs"
           className="font-medium underline underline-offset-4 hover:text-black transition-colors"
@@ -96,5 +98,5 @@ export default function Home() {
         </Link>
       </div>
     </main>
-  )
+  );
 }
