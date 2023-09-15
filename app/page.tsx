@@ -6,7 +6,7 @@ import TablePlaceholder from "@/components/table-placeholder";
 import ExpandingArrow from "@/components/expanding-arrow";
 import AddUser from "@/components/add-user";
 import StockFirmGroup from "@/components/stock-firm-group";
-import BestInvest from "@/components/bestinvest/bestinvest";
+import HDStock from "@/components/hdstock/hdstock";
 
 // Prisma does not support Edge without the Data Proxy currently
 // export const runtime = 'edge'
@@ -16,7 +16,7 @@ export const dynamic = "force-dynamic";
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center">
-      <BestInvest />
+      <HDStock />
       <div className="my-12" />
       <StockFirmGroup />
       {/* <AddUser />
