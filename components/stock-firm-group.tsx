@@ -22,6 +22,7 @@ const StockFirmGroup = () => {
     <div className="grid grid-cols-4 gap-4">
       {items.map((s) => (
         <div
+          key={s.name}
           className={`cursor-pointer w-40 h-12 rounded-md text-white flex justify-center items-center ${
             s.checked
               ? "bg-slate-600 hover:bg-slate-800"
